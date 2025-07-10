@@ -7,14 +7,14 @@ export default async function handler(req, res) {
   const HOVERCODE_API_KEY = '08698c6a641da2aa7047140c43356a9dceccc060';
 
   const {
-    url,                    // The destination URL for the QR code
-    workspace,              // One of your workspace IDs
-    display_name,           // Optional, for labeling
-    dynamic = true,         // Static or dynamic
-    primary_color = '#000000',  // HEX color
-    background_color,       // Optional
-    frame,                  // Optional frame name
-    pattern                 // Optional pattern
+    url,                    // required
+    workspace,              // required
+    display_name,           // optional
+    dynamic = true,         // optional
+    primary_color = '#000000',
+    background_color,
+    frame,
+    pattern
   } = req.body || {};
 
   if (!url || !workspace) {
